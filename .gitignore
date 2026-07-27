@@ -1,37 +1,80 @@
+# ==========================
+# Python
+# ==========================
+__pycache__/
+*.py[cod]
+*$py.class
+
 # Virtual environments
 .venv/
 venv/
 env/
+ENV/
+eb-env/
 
-# Python cache
-__pycache__/
-*.py[cod]
-*.pyo
+# ==========================
+# VS Code
+# ==========================
+.vscode/
+.history/
 
+# ==========================
 # Jupyter
+# ==========================
 .ipynb_checkpoints/
 
-# VS Code
-.vscode/
-
-# OS files
-.DS_Store
-Thumbs.db
-
+# ==========================
 # Logs
+# ==========================
 *.log
+logs/
 
+# ==========================
 # Environment variables
+# ==========================
 .env
+.env.*
 
-# Build files
+# ==========================
+# Build / Distribution
+# ==========================
 build/
 dist/
 *.egg-info/
 
+# ==========================
 # Pytest
+# ==========================
 .pytest_cache/
 
+# ==========================
 # Coverage
+# ==========================
 .coverage
 htmlcov/
+
+# ==========================
+# OS files
+# ==========================
+.DS_Store
+Thumbs.db
+
+# ==========================
+# Elastic Beanstalk
+# ==========================
+.elasticbeanstalk/*
+!.elasticbeanstalk/config.yml
+
+# ==========================
+# Temporary files
+# ==========================
+*.tmp
+*.bak
+*.swp
+
+# ==========================
+# Large ML files (optional)
+# Uncomment if you don't want
+# to version trained models
+# ==========================
+# models/*.pkl
