@@ -1,11 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Estimate forest fire weather risk from observed conditions.">
+  <title>Emberline | Fire weather intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
-<body>
-    <h1>Welcome to the home page</h1>
+<body class="landing-page">
+  <main>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="{{ url_for('index') }}"><span class="brand-mark">E</span> emberline</a>
+      <a class="text-link" href="{{ url_for('predict_datapoint') }}">Open estimator <span aria-hidden="true">↗</span></a>
+    </nav>
+
+    <section class="hero">
+      <p class="eyebrow">Fire weather intelligence / 01</p>
+      <div class="hero-layout">
+        <div>
+          <h1>Read the air<br>before the <em>spark.</em></h1>
+          <p class="hero-copy">Turn weather observations and fuel conditions into a clear Forest Weather Index estimate—built for faster, calmer field decisions.</p>
+          <a class="button button-primary" href="{{ url_for('predict_datapoint') }}">Estimate fire risk <span aria-hidden="true">→</span></a>
+        </div>
+        <aside class="hero-orbit" aria-label="Forest fire risk estimator overview">
+          <div class="orbit-ring ring-one"></div><div class="orbit-ring ring-two"></div>
+          <div class="signal-card"><span class="signal-dot"></span><p>Live input</p><strong>9 signals</strong><small>weather + fuel</small></div>
+          <span class="orbit-label label-top">FIRE WEATHER INDEX</span>
+          <span class="orbit-label label-bottom">FIELD READY</span>
+        </aside>
+      </div>
+    </section>
+
+    <section class="landing-notes" aria-label="How it works">
+      <p><span>01</span> Enter observed weather and fuel conditions.</p>
+      <p><span>02</span> Receive a model-based FWI estimate.</p>
+      <p><span>03</span> Use the risk band to support—not replace—local guidance.</p>
+    </section>
+  </main>
 </body>
 </html>
