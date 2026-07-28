@@ -14,8 +14,15 @@ app = application
 
 with (BASE_DIR / "models" / "ridge.pkl").open("rb") as model_file:
     ridge_model = pickle.load(model_file)
+with (BASE_DIR / "models" / "linreg.pkl").open("rb") as model_file:
+    linear_model = pickle.load(model_file)
 with (BASE_DIR / "models" / "scaler.pkl").open("rb") as scaler_file:
     standard_scaler = pickle.load(scaler_file)
+
+MODELS = {
+    "ridge": {"label": "Ridge Regression", "model": ridge_model},
+    "linear": {"label": "Linear Regression", "model": linear_model},
+}
 
 
 FIELD_SPECS = (
@@ -57,10 +64,16 @@ def index():
 def predict_datapoint():
     form_data = empty_form_data()
     errors = {}
+    selected_model = "ridge"
 
     if request.method == "POST":
         form_data = {name: request.form.get(name, "").strip() for name, *_ in FIELD_SPECS}
+        selected_model = request.form.get("model", "ridge")
         values = []
+
+        if selected_model not in MODELS:
+            errors["model"] = "Choose one of the available models."
+            selected_model = "ridge"
 
         for name, label, _unit, minimum, maximum in FIELD_SPECS:
             raw_value = form_data[name]
@@ -78,11 +91,14 @@ def predict_datapoint():
             feature_names = [name for name, *_ in FIELD_SPECS]
             model_input = pd.DataFrame([values], columns=feature_names)
             scaled_data = standard_scaler.transform(model_input)
-            prediction = float(ridge_model.predict(scaled_data)[0])
+            prediction = float(MODELS[selected_model]["model"].predict(scaled_data)[0])
             risk_label, risk_key, guidance = classify_fire_risk(prediction)
             return render_template(
                 "home.html",
                 form_data=form_data,
+                selected_model=selected_model,
+                model_options=MODELS,
+                model_label=MODELS[selected_model]["label"],
                 result=round(prediction, 2),
                 risk_label=risk_label,
                 risk_key=risk_key,
@@ -90,7 +106,13 @@ def predict_datapoint():
                 errors=errors,
             )
 
-    return render_template("home.html", form_data=form_data, errors=errors)
+    return render_template(
+        "home.html",
+        form_data=form_data,
+        selected_model=selected_model,
+        model_options=MODELS,
+        errors=errors,
+    )
 
 
 if __name__ == "__main__":
