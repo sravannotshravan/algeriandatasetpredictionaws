@@ -1,0 +1,65 @@
+[33mcommit d093840e6747f4cf877eda5dc8e7fb3518408fc7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Sravan Kowsik Gonuguntla <75194884+sravannotshravan@users.noreply.github.com>
+Date:   Tue Jul 28 12:40:32 2026 +0530
+
+    Added sliders and toggles
+
+[33mcommit fc3e6f7f20b5f824dee9dac579408468de6c390b[m
+Author: Sravan Kowsik Gonuguntla <75194884+sravannotshravan@users.noreply.github.com>
+Date:   Tue Jul 28 12:26:41 2026 +0530
+
+    Stop tracking ignored files and folders, added github link
+
+[33mcommit ffe64d593626bf48833577c4f4b0798bb294ca34[m
+Author: Sravan Kowsik Gonuguntla <75194884+sravannotshravan@users.noreply.github.com>
+Date:   Tue Jul 28 12:21:34 2026 +0530
+
+    Added README for future maintainance
+
+[33mcommit 4488e14db2ecda64dce1de27d04859e5eb0dc224[m
+Author: Sravan Kowsik Gonuguntla <75194884+sravannotshravan@users.noreply.github.com>
+Date:   Tue Jul 28 11:00:14 2026 +0530
+
+    Added linear regression and ridge regression for comparison; adjusted footer for readability
+
+[33mcommit 4ddb27b403cd2bc4b20a1fbf3d5146cfa5da2e91[m
+Author: Sravan Kowsik Gonuguntla <75194884+sravannotshravan@users.noreply.github.com>
+Date:   Mon Jul 27 09:00:08 2026 +0530
+
+    Rewamped ui
+
+[33mcommit 85fcd8f944d54b675d36c565bb6eae6439d0e859[m
+Author: Sravan Kowsik Gonuguntla <75194884+sravannotshravan@users.noreply.github.com>
+Date:   Mon Jul 27 08:46:25 2026 +0530
+
+    updating requirements.txt
+
+[33mcommit ef502b81097800e86a3852ca1107b15aef3e4ab2[m
+Author: Sravan Kowsik Gonuguntla <75194884+sravannotshravan@users.noreply.github.com>
+Date:   Mon Jul 27 08:34:53 2026 +0530
+
+    Fixing YAML issue with python.config
+
+[33mcommit 3a181ab60f92cbe70b62ff5f7f3ee79c258a38e8[m
+Author: Sravan Kowsik Gonuguntla <75194884+sravannotshravan@users.noreply.github.com>
+Date:   Mon Jul 27 08:27:54 2026 +0530
+
+    added gitignore and modified img
+
+[33mcommit 5d0c1ed03f5aad736f19c211a6e6b84677eae3d1[m
+Author: Sravan Kowsik Gonuguntla <75194884+sravannotshravan@users.noreply.github.com>
+Date:   Sun Jul 26 23:40:13 2026 +0530
+
+    Gunicorn added to requirements
+
+[33mcommit f8c6e3510ebce9a4d987c767aac007ed628420a6[m
+Author: Sravan Kowsik Gonuguntla <75194884+sravannotshravan@users.noreply.github.com>
+Date:   Sun Jul 26 21:35:55 2026 +0530
+
+    Beanstalk configuration
+
+[33mcommit 6f6cb9628841467293a1a963c888a1f9934d732f[m
+Author: Sravan Kowsik Gonuguntla <75194884+sravannotshravan@users.noreply.github.com>
+Date:   Sun Jul 26 21:19:39 2026 +0530
+
+    first commit
